@@ -1,0 +1,486 @@
+1.  
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <metahttp-equiv="Content-Type" content="text/html"; charset="UTF-8" />
+    <title>Добавление React на сайт</title>
+  </head>
+
+  <body>
+
+    <div>
+      <h1>Welcome here!</h1>
+      <p>zukclub street art crew</p>
+    </div>
+
+      <div class="like_button_container" data-commentid="1"></div>
+	<div class="like_button_container" data-commentid="2"></div>
+
+	<script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+	<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+
+	<script src="like_button.js"></script>
+
+</body>
+</html>
+
+2.
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>ZUKCLUB</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+
+      ReactDOM.render(
+        <div><h3>ZUKCLUB.Laboratory 2</h3></div>,
+        document.getElementById('example')
+      );
+
+    </script>
+  </body>
+</html>
+
+3.
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>Hello React</title>
+	<script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+	<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+</head>
+
+<body>
+
+	<div id="app"></div>
+	<div id="block"></div>
+
+
+	<script type="text/babel">
+		ReactDOM.render(
+			<h2>5 + 2 = {5 + 2}</h2>,
+			document.getElementById("app")
+		)
+
+		const userClassName = "user-info";
+
+		const styleObj = {
+			color: 'yellow',
+			fontFamily: 'Calibri',
+                         fontSize:'60',
+		};
+
+		const user = {
+			id: 11,
+			age: 25,
+			firstName: 'Roman',
+			lastName: 'Zukclub',
+			getFullName: function () {
+				return `${this.firstName} ${this.lastName}`;
+			}
+		};
+
+
+
+		ReactDOM.render(
+			<div className={userClassName} style={styleObj}>
+				<p>Полное имя: {user.getFullName()}</p>
+				<p>Возраст: {user.age}</p>
+			</div>,
+			document.getElementById("block")
+		)
+
+
+	</script>
+
+
+</body>
+
+</html
+
+4. 
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello React</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+<body>
+    <div id="h1"> </div>
+    <div id="h2"> </div>
+    <div id="h3"> </div>
+    <div id="timer-example"> </div>
+    <script type="text/babel">
+        function Hello1() {
+            return <h1>Hello Crew!</h1>;
+        }
+        var Hello2 =() => {
+            return (<h1>Hello Crew!</h1>);
+        }
+        class Hello3 extends React.Component {
+            render() {
+                return <h1>Hello Crew!</h1>;
+            }
+        }
+
+        ReactDOM.render(
+            <Hello1 />,
+            document.getElementById("h1")
+        )
+        ReactDOM.render(
+            <Hello2 />,
+            document.getElementById("h2")
+        )
+        ReactDOM.render(
+            <Hello3 />,
+            document.getElementById("h3")
+        )
+
+        class Timer extends React.Component {
+		  constructor(props) {
+		    super(props);
+		    this.state = { seconds: 0 };
+		  }
+
+		  tick() {
+		    this.setState(state => ({
+		      seconds: state.seconds + 1
+		    }));
+		  }
+
+		  componentDidMount() {
+		    this.interval = setInterval(() => this.tick(), 1000);
+		  }
+
+		  componentWillUnmount() {
+		    clearInterval(this.interval);
+		  }
+
+		  render() {
+		    return (
+		      <div>
+		        Seconds: {this.state.seconds}
+		      </div>
+		    );
+		  }
+		}
+
+		ReactDOM.render(
+			<Timer> {<Timer />}
+			</Timer>,
+		  document.getElementById('timer-example')
+		);
+    </script>
+</body>
+</html>
+
+5. 
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>ZUKCLUB</title>
+</head>
+<body>
+    <div id="app"></div>
+
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+    <script type="text/babel" src="index.jsx"></script>
+</body>
+</html>
+
+Index JS
+
+class Hello extends React.Component {
+	render() {
+		return <h1>Hello ZUKCLUB</h1>;
+	}
+}
+ReactDOM.render(
+	<Hello></Hello>,
+	document.getElementById("app")
+)
+
+package json
+
+{
+    "name": "helloapp",
+    "version": "1.0.0",
+    "scripts": {
+        "start": "lite-server"
+    },
+    "devDependencies": {
+        "lite-server": "^2.2.1"
+    }
+}
+
+
+6. 
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>ZUKCLUB</title>
+	<style>
+		button {
+			width: 100px;
+			height: 30px;
+			border-radius: 4px;
+			margin: 50px;
+		}
+
+		.on {
+			color: #666;
+			background-color: #ccc;
+		}
+
+		.off {
+			color: #888;
+			background-color: white;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="app"></div>
+
+	<script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+	<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+	<script type="text/babel" src="index.jsx"></script>
+</body>
+
+</html>
+
+
+7.
+
+
+<head>
+	<meta charset="utf-8" />
+	<title>Hello React</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+const propsValues = {
+	title: "Список группы",
+	items: [
+		"Студент 1",
+		"Студент 2",
+		"Студент 3",
+		"Студент 4",
+		"Студент 5",
+		"Студент 6"
+	]
+};
+
+class Item extends React.Component {
+	render() {
+		return <li>{this.props.name}</li>;
+	}
+}
+
+
+class ClickButton extends React.Component {
+
+	constructor(props) {
+		super(props);
+		this.state = { class: "off", label: "Нажми" };
+
+		this.press = this.press.bind(this);
+
+		console.log("constructor");
+	}
+
+	componentWillReceiveProps(nextProps) {
+		console.log("componentWillReceiveProps()");
+	}
+
+
+	render() {
+		return <button onClick={this.press} className={this.state.class}>{this.state.label}</button>;
+	}
+}
+
+
+
+class SearchPlugin extends React.Component {
+
+	constructor(props) {
+		super(props);
+		this.onTextChanged = this.onTextChanged.bind(this);
+	}
+
+	onTextChanged(e) {
+		var text = e.target.value.trim();   // удаляем пробелы
+		this.props.filter(text); // передаем введенный текст в родительский компонент
+	}
+
+	render() {
+		return <input placeholder="Поиск" onChange={this.onTextChanged} />;
+	}
+}
+
+class ItemsList extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = { items: this.props.data.items };
+
+		this.filterList = this.filterList.bind(this);
+	}
+
+	filterList(text) {
+		var filteredList = this.props.data.items.filter(function (item) {
+			return item.toLowerCase().search(text.toLowerCase()) !== -1;
+		});
+		this.setState({ items: filteredList });
+	}
+
+	render() {
+		return (
+			<div>
+				<h2 className="title">{this.props.data.title}</h2>
+				<SearchPlugin filter={this.filterList} />
+				<ul>
+					{
+						this.state.items.map(function (item) {
+							return <Item key={item} name={item} />
+						})
+					}
+				</ul>
+			</div>);
+	}
+}
+
+ReactDOM.render(
+	<ItemsList data={propsValues} />,
+	document.getElementById("app")
+)
+
+STYLE CSS
+
+body {
+    color: green;
+    background-color: rgb(99, 187, 99);
+    }
+
+    input {
+        color: rgb(74, 17, 187);
+        background-color: #898e94;
+
+    }
+
+.listItem {
+        font-size: 40px;
+
+8
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>ZUKCLUB. LAB8</title>
+</head>
+
+<body>
+	<div id="app"></div>
+
+	<script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+	<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+
+	<script type="text/babel">
+		class UserForm extends React.Component {
+			constructor(props) {
+				super(props);
+				var name = props.name;
+				var nameIsValid = this.validateName(name);
+				var age = props.age;
+				var ageIsValid = this.validateAge(age);
+				this.state = { name: name, age: age, nameValid: nameIsValid, ageValid: ageIsValid };
+
+				this.onNameChange = this.onNameChange.bind(this);
+				this.onAgeChange = this.onAgeChange.bind(this);
+				this.handleSubmit = this.handleSubmit.bind(this);
+			}
+			validateAge(age) {
+				return age >= 0;
+			}
+			validateName(name) {
+				return name.length > 2;
+			}
+			onAgeChange(e) {
+				var val = e.target.value;
+				var valid = this.validateAge(val);
+				this.setState({ age: val, ageValid: valid });
+			}
+			onNameChange(e) {
+				var val = e.target.value;
+				var valid = this.validateName(val);
+				this.setState({ name: val, nameValid: valid });
+			}
+
+			handleSubmit(e) {
+				e.preventDefault();
+				var name = this.refs.nameField.value;
+				var age = this.refs.ageField.value;
+				if (this.state.nameValid && this.state.ageValid) {
+					alert("Имя: " + name + " Возраст: " + age);
+				}
+
+			}
+
+			render() {
+				// цвет границы для поля для ввода имени
+				var nameColor = this.state.nameValid === true ? "green" : "red";
+				// цвет границы для поля для ввода возраста
+				var ageColor = this.state.ageValid === true ? "green" : "red";
+				return (
+					<form onSubmit={this.handleSubmit}>
+						<p>
+							<label>Имя:</label><br />
+							<input ref="nameField" type="text" value={this.state.name}
+								onChange={this.onNameChange} style={{ borderColor: nameColor }} />
+						</p>
+						<p>
+							<label>Возраст:</label><br />
+							<input ref="ageField" type="number" value={this.state.age}
+								onChange={this.onAgeChange} style={{ borderColor: ageColor }} />
+						</p>
+						<input type="submit" value="Отправить" />
+					</form>
+				);
+			}
+		}
+		ReactDOM.render(
+			<UserForm name="" age="0" />,
+			document.getElementById("app")
+		)
+	</script>
+</body>
+
+</html>
